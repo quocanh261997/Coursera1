@@ -7,7 +7,7 @@ def mergesort(x):
         left,num1 = mergesort(x[:middle])
         right,num2 = mergesort(x[middle:])
         arr, num3 = mergeAndCount(left,right)
-        return arr,num1+num2+num3
+        return arr, num1+num2+num3
 
 def mergeAndCount(x,y):
     result = []
@@ -30,7 +30,10 @@ def mergeAndCount(x,y):
         j += 1
     return result,num
 
-a = [5,7,4,1,5]
-a = mergesort(a)
-print(a)
+total = 0
+with open("/home/michael/Downloads/Integer.txt","r") as file:
+    input = [int(x) for x in file.readlines()]
+    print(mergesort(input))
+print(total)
+
 
